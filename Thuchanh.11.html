@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi so co the</title>
+</head>
+<body>
+<input type="text" id="number1">
+<input type="text" id="number2">
+<button onclick="chiso()">Tinh chi so</button>
+<script>
+    function chiso() {
+        let number1 = document.getElementById("number1").value;
+        let number2 = document.getElementById("number2").value;
+        let weight = Number(number1);
+        let height= Number(number2);
+        let BMI = weight/  (height ^2) ;
+        let ketluan;
+        if (BMI < 0 || BMI> 31) {
+            ketluan="Nhap sai r";
+        }
+        else {
+            if (BMI>30){
+                ketluan="Obese";
+            }
+            else {
+                if (BMI>25){
+                    ketluan="Overweight";
+                }
+                else {
+                    if (BMI>18.5){
+                        ketluan="Normal";
+                    }
+                    else {
+                        if (BMI<18.5){
+                            ketluan="Underweight";
+                        }
+                        else {
+                            ketluan="Khong dat";
+                        }
+                    }
+                }
+            }
+        }
+        document.getElementById("chiso").innerText = ketluan;
+    }
+</script>
+</body>
+</html>
